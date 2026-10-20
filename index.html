@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymStore | Thực Phẩm Bổ Sung & Dinh Dưỡng Thể Hình Chính Hãng</title>
+    <meta name="description" content="GymStore - Hệ thống bán lẻ thực phẩm bổ sung, Whey Protein, BCAA, Pre-workout, Mass Gainer nhập khẩu chính hãng 100% từ Hoa Kỳ & Châu Âu.">
+    <meta name="author" content="Nguyễn Thành Công - MSSV: 125000360 - SĐT: 0375199493">
+
+    <!-- Favicon Logo (Yêu cầu đề bài hiển thị trên tab trình duyệt) -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Animate.css Library (Yêu cầu đề thi) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- AOS - Animate On Scroll Library (Yêu cầu đề thi) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+    
+    <!-- Main Custom Stylesheet (CSS Variables & Flexbox/Grid) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR (Header Utility) -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-bolt text-primary"></i> <strong>FLASH SALE GIỜ VÀNG:</strong> Giảm tới 35% cho thành viên VIP hôm nay!</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#store-locator"><i class="fa-solid fa-location-dot"></i> Hệ thống 12 chi nhánh</a>
+                <span class="divider">|</span>
+                <a href="tel:0375199493"><i class="fa-solid fa-phone"></i> Hotline: 0375 199 493 (Hỗ trợ 24/7)</a>
+                <span class="divider">|</span>
+                <a href="mailto:cong214165@gmail.com"><i class="fa-solid fa-envelope"></i> cong214165@gmail.com</a>
+                <span class="divider">|</span>
+                <a href="javascript:void(0)" onclick="openCheckoutModal()"><i class="fa-solid fa-truck-fast"></i> Tra cứu đơn</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEMANTIC HTML5: HEADER -->
+    <header class="main-header" id="header">
+        <div class="container header-container">
+            <!-- Brand Logo with Custom Logo Image -->
+            <a href="#home" class="logo animate__animated animate__fadeInLeft" aria-label="GymStore Trang Chủ">
+                <img src="assets/logo.png" alt="GymStore Logo" class="brand-logo-img">
+                <div class="logo-text">
+                    <span class="brand-name">GYM<span>STORE</span></span>
+                    <span class="brand-tagline">SPORT NUTRITION • SINCE 2011</span>
+                </div>
+            </a>
+
+            <!-- Search Form -->
+            <div class="header-search">
+                <form class="search-form" onsubmit="event.preventDefault();" role="search">
+                    <div class="search-category-select">
+                        <select id="searchCategory" aria-label="Chọn danh mục tìm kiếm">
+                            <option value="all">Tất cả danh mục</option>
+                            <option value="whey">Whey Protein</option>
+                            <option value="mass">Sữa tăng cân Mass</option>
+                            <option value="pre">Pre-Workout</option>
+                            <option value="recovery">BCAA / EAA</option>
+                            <option value="health">Vitamin & Khoáng chất</option>
+                        </select>
+                    </div>
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="Tìm kiếm Whey Isolate, Rule 1, Mass Gainer, Creatine..." id="searchInput" aria-label="Tìm kiếm sản phẩm">
+                        <button type="submit" class="search-btn" aria-label="Thực hiện tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+                <div class="quick-keywords">
+                    <span class="keyword-label">Gợi ý:</span>
+                    <a href="#products">Rule 1 Protein</a>
+                    <a href="#products">ISO 100</a>
+                    <a href="#products">Mutant Mass</a>
+                    <a href="#products">Creatine Mono</a>
+                </div>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle Button (Sáng / Tối) -->
+                <button class="theme-toggle-btn" id="themeToggleBtn" title="Chuyển đổi giao diện Sáng / Tối" aria-label="Chuyển chế độ Sáng / Tối">
+                    <i class="fa-solid fa-moon theme-icon"></i>
+                    <span class="theme-text">Tối</span>
+                </button>
+
+                <!-- Hotline Consultation -->
+                <a href="tel:0375199493" class="action-item consultation-cta" title="Gọi tư vấn PT">
+                    <div class="action-icon hotline-pulse"><i class="fa-solid fa-headset"></i></div>
+                    <div class="action-text">
+                        <span class="sub">Tư vấn chuyên môn PT</span>
+                        <span class="main">0375.199.493</span>
+                    </div>
+                </a>
+
+                <!-- Wishlist -->
+                <a href="#wishlist" class="action-item" id="wishlistBtn" title="Danh sách yêu thích" aria-label="Danh sách yêu thích">
+                    <div class="action-icon">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="badge" id="wishlistCount">3</span>
+                    </div>
+                    <span class="action-label">Yêu thích</span>
+                </a>
+
+                <!-- Cart Action (Mở Modal Đặt Hàng & Giỏ Hàng) -->
+                <div class="action-item cart-action" id="cartToggle" title="Xem giỏ hàng & Đặt hàng" role="button" tabindex="0">
+                    <div class="action-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="badge" id="cartCount">2</span>
+                    </div>
+                    <div class="action-text">
+                        <span class="sub">Giỏ hàng</span>
+                        <span class="main" id="cartTotalHeader">2.450.000₫</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở Menu điều hướng">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- SEMANTIC HTML5: NAV -->
+        <nav class="main-navigation" id="mainNav" aria-label="Menu chính">
+            <div class="container nav-container">
+                <div class="category-dropdown-btn">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                    <span>DANH MỤC SẢN PHẨM</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    
+                    <!-- Megamenu Dropdown -->
+                    <div class="megamenu">
+                        <div class="megamenu-column">
+                            <h4><i class="fa-solid fa-fire-flame-curved"></i> TĂNG CƠ NẠC (WHEY)</h4>
+                            <ul>
+                                <li><a href="#products">Whey Protein Isolate</a></li>
+                                <li><a href="#products">Hydrolyzed Whey cao cấp</a></li>
+                                <li><a href="#products">Whey Protein Blend</a></li>
+                                <li><a href="#products">Casein - Nuôi cơ ban đêm</a></li>
+                                <li><a href="#products">Vegan Protein (Thuần chay)</a></li>
+                            </ul>
+                        </div>
+                        <div class="megamenu-column">
+                            <h4><i class="fa-solid fa-weight-scale"></i> TĂNG CÂN - TĂNG CƠ</h4>
+                            <ul>
+                                <li><a href="#products">Mass Cao Năng Lượng (Cho người gầy)</a></li>
+                                <li><a href="#products">Mass Trung Năng Lượng (Ít mỡ)</a></li>
+                                <li><a href="#products">Bữa ăn thay thế (Meal Replacement)</a></li>
+                            </ul>
+                        </div>
+                        <div class="megamenu-column">
+                            <h4><i class="fa-solid fa-bolt"></i> SỨC MẠNH & NĂNG LƯỢNG</h4>
+                            <ul>
+                                <li><a href="#products">Pre-Workout bùng nổ</a></li>
+                                <li><a href="#products">Creatine Monohydrate</a></li>
+                                <li><a href="#products">Beta-Alanine & Citrulline</a></li>
+                                <li><a href="#products">Energy Drink & Nước điện giải</a></li>
+                            </ul>
+                        </div>
+                        <div class="megamenu-column">
+                            <h4><i class="fa-solid fa-heart-pulse"></i> PHỤC HỒI & SỨC KHỎE</h4>
+                            <ul>
+                                <li><a href="#products">BCAA / EAA chống dị hóa</a></li>
+                                <li><a href="#products">Đốt mỡ - Fat Burner / L-Carnitine</a></li>
+                                <li><a href="#products">Vitamin tổng hợp & Dầu cá Omega 3</a></li>
+                                <li><a href="#products">Hỗ trợ xương khớp & Giấc ngủ sâu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="nav-links">
+                    <li class="active"><a href="#home"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                    <li><a href="#flash-sale"><span class="badge-tag hot">HOT</span> Flash Sale</a></li>
+                    <li><a href="#products">Sản phẩm bán chạy</a></li>
+                    <li><a href="#goals">Mục tiêu tập luyện</a></li>
+                    <li><a href="#brands">Thương hiệu</a></li>
+                    <li><a href="#nutrition-quiz">Tư vấn dinh dưỡng</a></li>
+                    <li><a href="#blog">Kiến thức Gym</a></li>
+                    <li><a href="javascript:void(0)" onclick="openCheckoutModal()"><i class="fa-solid fa-cart-shopping text-primary"></i> Đặt Hàng Ngay</a></li>
+                </ul>
+
+                <div class="nav-highlight">
+                    <i class="fa-solid fa-shield-halved text-primary"></i>
+                    <span>100% Chính Hãng Cam Kết</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SEMANTIC HTML5: MAIN (KHU VỰC NỘI DUNG CHÍNH) -->
+    <main id="main-content">
+
+        <!-- SECTION 1: HERO BANNER -->
+        <section class="hero-section" id="home">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge animate__animated animate__fadeInDown">
+                        <i class="fa-solid fa-certificate"></i> HỆ THỐNG PHÂN PHỐI THỰC PHẨM BỔ SUNG TOP 1 VIỆT NAM
+                    </div>
+                    <h1 class="hero-title animate__animated animate__fadeInLeft">
+                        BỨT PHÁ <span>GIỚI HẠN</span><br>
+                        TỐI ƯU CƠ BẮP & HIỆU SUẤT
+                    </h1>
+                    <p class="hero-description animate__animated animate__fadeInLeft animate__delay-1s">
+                        Cung cấp 100% Thực phẩm bổ sung cao cấp nhập khẩu chính ngạch từ Hoa Kỳ & Châu Âu: Rule 1, Optimum Nutrition, Dymatize, Mutant, Applied Nutrition. Đầy đủ tem cào chống giả, hoá đơn VAT và giấy kiểm nghiệm Bộ Y Tế.
+                    </p>
+                    <div class="hero-cta-group animate__animated animate__fadeInUp animate__delay-1s">
+                        <a href="javascript:void(0)" onclick="openCheckoutModal()" class="btn btn-primary btn-lg">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>ĐẶT MUA NGAY HÔM NAY</span>
+                        </a>
+                        <a href="#nutrition-quiz" class="btn btn-outline btn-lg">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Gợi Ý Theo Thể Trạng</span>
+                        </a>
+                    </div>
+
+                    <!-- Live stats -->
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-item">
+                            <span class="stat-number">150.000+</span>
+                            <span class="stat-label">Khách hàng tin tưởng</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Chính hãng có tem BQP</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">2 GIỜ</span>
+                            <span class="stat-label">Giao siêu tốc nội thành</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="hero-visual-card">
+                        <div class="floating-badge badge-discount animate__animated animate__pulse animate__infinite">
+                            <span class="percent">-28%</span>
+                            <span class="text">SIÊU DEAL</span>
+                        </div>
+                        <div class="hero-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80" alt="Gym Supplements & Protein Fitness" class="hero-img">
+                        </div>
+                        <div class="floating-badge badge-quality">
+                            <i class="fa-solid fa-award"></i>
+                            <div>
+                                <strong>Whey Isolate #1</strong>
+                                <span>25g Protein thuần khiết/muỗng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: TRUST FEATURES / USP -->
+        <section class="trust-features" aria-label="Cam kết chất lượng">
+            <div class="container features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="feature-text">
+                        <h3>100% Chính Hãng</h3>
+                        <p>Đền tiền gấp 10 lần nếu phát hiện hàng giả, hàng nhái</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="feature-text">
+                        <h3>Giao Siêu Tốc 2H</h3>
+                        <p>Miễn phí vận chuyển cho hoá đơn từ 500.000đ toàn quốc</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div class="feature-text">
+                        <h3>Đổi Trả 7 Ngày</h3>
+                        <p>Đổi mới dễ dàng nếu không hài lòng hoặc lỗi do nhà sản xuất</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="feature-text">
+                        <h3>Tư Vấn PT / Dinh Dưỡng</h3>
+                        <p>Đội ngũ chuyên viên thể hình tư vấn phác đồ chuẩn xác</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: FLASH SALE SECTION -->
+        <section class="section-container flash-sale-section" id="flash-sale">
+            <div class="container">
+                <div class="flash-sale-header" data-aos="fade-down">
+                    <div class="flash-title-wrap">
+                        <span class="flash-icon animate__animated animate__heartBeat animate__infinite"><i class="fa-solid fa-bolt"></i></span>
+                        <h2>FLASH SALE GIỜ VÀNG</h2>
+                        <span class="live-indicator"><span class="blink-dot"></span> ĐANG DIỄN RA</span>
+                    </div>
+                    <div class="countdown-wrapper">
+                        <span class="countdown-label">Kết thúc sau:</span>
+                        <div class="countdown-box" id="saleHours">08</div>
+                        <span class="colon">:</span>
+                        <div class="countdown-box" id="saleMinutes">45</div>
+                        <span class="colon">:</span>
+                        <div class="countdown-box" id="saleSeconds">30</div>
+                    </div>
+                </div>
+
+                <!-- Flash Sale Grid -->
+                <div class="products-grid flash-grid">
+                    <!-- Product 1: Rule 1 -->
+                    <article class="product-card hot-deal" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag discount-tag">-25%</span>
+                            <span class="badge-tag hot-tag">HOT DEAL</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80" alt="Rule 1 Proteins Protein Isolate">
+                            <button class="quick-view-btn" onclick="openQuickView('Rule 1 Protein WPI + WPH 5lbs', '1.650.000₫', '2.200.000₫', 'Rule 1 Whey Protein Isolate & Hydrolyzed siêu tinh khiết, 25g Protein, 6g BCAA, 0 đường, 0 fat.', 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">RULE ONE PROTEINS</span>
+                            <h3 class="product-title"><a href="#products">Rule 1 Protein WPI + WPH 5lbs (2.27kg)</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(482 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-cookie"></i> Chocolate Fudge</span>
+                                <span class="serving-pill">76 Servings</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">1.650.000₫</span>
+                                <span class="old-price">2.200.000₫</span>
+                            </div>
+                            <div class="sale-progress-bar">
+                                <div class="progress-track"><div class="progress-fill" style="width: 82%;"></div></div>
+                                <span class="sold-text"><i class="fa-solid fa-fire text-primary"></i> Đã bán 82/100 hũ</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Rule 1 Protein WPI + WPH 5lbs', 1650000, 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80', 'Chocolate Fudge')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 2: Dymatize ISO 100 -->
+                    <article class="product-card hot-deal" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag discount-tag">-30%</span>
+                            <span class="badge-tag best-seller">TOP 1 BÁN CHẠY</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80" alt="Dymatize ISO 100 5lbs">
+                            <button class="quick-view-btn" onclick="openQuickView('Dymatize ISO 100 Hydrolyzed 5lbs', '2.090.000₫', '2.950.000₫', 'Đỉnh cao Whey Isolate Hydrolyzed hấp thụ nhanh nhất thế giới, hỗ trợ tăng cơ nạc tối đa.', 'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">DYMATIZE NUTRITION</span>
+                            <h3 class="product-title"><a href="#products">Dymatize ISO 100 Hydrolyzed 5lbs (2.3kg)</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(610 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-ice-cream"></i> Gourmet Vanilla</span>
+                                <span class="serving-pill">71 Servings</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">2.090.000₫</span>
+                                <span class="old-price">2.950.000₫</span>
+                            </div>
+                            <div class="sale-progress-bar">
+                                <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+                                <span class="sold-text"><i class="fa-solid fa-fire text-primary"></i> Sắp cháy hàng! Đã bán 95/100</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Dymatize ISO 100 Hydrolyzed 5lbs', 2090000, 'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80', 'Gourmet Vanilla')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 3: Mutant Mass Gainer -->
+                    <article class="product-card hot-deal" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag discount-tag">-22%</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1579722820308-d74e571900a9?auto=format&fit=crop&w=600&q=80" alt="Mutant Mass Gainer 15lbs">
+                            <button class="quick-view-btn" onclick="openQuickView('Mutant Mass Tăng Cân Vượt Trội 15lbs', '1.890.000₫', '2.400.000₫', 'Sữa tăng cân tăng cơ siêu cấp Mutant Mass, 1100 calo và 56g Protein chất lượng cao.', 'https://images.unsplash.com/photo-1579722820308-d74e571900a9?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">MUTANT CANADA</span>
+                            <h3 class="product-title"><a href="#products">Mutant Mass Tăng Cân Vượt Trội 15lbs (6.8kg)</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <span class="rating-count">(324 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-mug-hot"></i> Triple Chocolate</span>
+                                <span class="serving-pill">1100 Calories</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">1.890.000₫</span>
+                                <span class="old-price">2.400.000₫</span>
+                            </div>
+                            <div class="sale-progress-bar">
+                                <div class="progress-track"><div class="progress-fill" style="width: 64%;"></div></div>
+                                <span class="sold-text"><i class="fa-solid fa-fire text-primary"></i> Đã bán 64/100 bao</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Mutant Mass Tăng Cân Vượt Trội 15lbs', 1890000, 'https://images.unsplash.com/photo-1579722820308-d74e571900a9?auto=format&fit=crop&w=600&q=80', 'Triple Chocolate')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 4: Pre-Workout ABE -->
+                    <article class="product-card hot-deal" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag discount-tag">-20%</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=600&q=80" alt="Applied Nutrition ABE Pre-Workout">
+                            <button class="quick-view-btn" onclick="openQuickView('Pre-Workout ABE All Black Everything', '650.000₫', '820.000₫', 'Tăng sức mạnh, tỉnh táo, bơm máu cơ bắp tột đỉnh với công thức ABE kinh điển từ Anh Quốc.', 'https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">APPLIED NUTRITION UK</span>
+                            <h3 class="product-title"><a href="#products">Pre-Workout ABE All Black Everything 315g</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(890 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-lemon"></i> Energy Flavour</span>
+                                <span class="serving-pill">30 Liều dùng</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">650.000₫</span>
+                                <span class="old-price">820.000₫</span>
+                            </div>
+                            <div class="sale-progress-bar">
+                                <div class="progress-track"><div class="progress-fill" style="width: 78%;"></div></div>
+                                <span class="sold-text"><i class="fa-solid fa-fire text-primary"></i> Đã bán 78/100 hũ</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Pre-Workout ABE All Black Everything 315g', 650000, 'https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=600&q=80', 'Energy Flavour')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SHOP BY FITNESS GOALS -->
+        <section class="section-container goals-section" id="goals">
+            <div class="container">
+                <div class="section-title-wrap text-center" data-aos="fade-up">
+                    <span class="sub-title"><i class="fa-solid fa-bullseye text-primary"></i> GIẢI PHÁP DINH DƯỠNG</span>
+                    <h2 class="main-title">BẠN ĐANG HƯỚNG TỚI MỤC TIÊU NÀO?</h2>
+                    <p class="desc">Chọn đúng sản phẩm theo thể trạng và giáo án để tối ưu hóa 100% hiệu suất phát triển hình thể</p>
+                </div>
+
+                <div class="goals-grid">
+                    <div class="goal-card" data-aos="zoom-in" data-aos-delay="100" style="background-image: linear-gradient(180deg, rgba(15,23,42,0.2) 0%, rgba(15,23,42,0.95) 100%), url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=80');">
+                        <div class="goal-content">
+                            <span class="goal-tag">MỤC TIÊU 01</span>
+                            <h3>TĂNG CƠ NẠC & SIẾT MỠ</h3>
+                            <p>Dành cho người muốn cơ bắp săn chắc, cắt nét, không tích mỡ thừa và phục hồi nhanh.</p>
+                            <a href="#products" class="goal-link">Xem Combo Tăng Cơ <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="goal-card" data-aos="zoom-in" data-aos-delay="200" style="background-image: linear-gradient(180deg, rgba(15,23,42,0.2) 0%, rgba(15,23,42,0.95) 100%), url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&q=80');">
+                        <div class="goal-content">
+                            <span class="goal-tag">MỤC TIÊU 02</span>
+                            <h3>TĂNG CÂN & TĂNG SIZE</h3>
+                            <p>Dành cho người gầy lâu năm, khó hấp thu muốn bứt phá cân nặng và kích thước khung xương.</p>
+                            <a href="#products" class="goal-link">Xem Dòng Sữa Mass <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="goal-card" data-aos="zoom-in" data-aos-delay="300" style="background-image: linear-gradient(180deg, rgba(15,23,42,0.2) 0%, rgba(15,23,42,0.95) 100%), url('https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?auto=format&fit=crop&w=700&q=80');">
+                        <div class="goal-content">
+                            <span class="goal-tag">MỤC TIÊU 03</span>
+                            <h3>SỨC MẠNH & BỀN BỈ</h3>
+                            <p>Gia tăng tạ, bùng nổ năng lượng trong phòng gym, tập khỏe hơn và đánh tan mệt mỏi.</p>
+                            <a href="#products" class="goal-link">Xem Pre-Workout & Creatine <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="goal-card" data-aos="zoom-in" data-aos-delay="400" style="background-image: linear-gradient(180deg, rgba(15,23,42,0.2) 0%, rgba(15,23,42,0.95) 100%), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80');">
+                        <div class="goal-content">
+                            <span class="goal-tag">MỤC TIÊU 04</span>
+                            <h3>ĐỐT MỠ CẤP TỐC (CUTTING)</h3>
+                            <p>Thúc đẩy trao đổi chất, giải phóng mỡ bụng cứng đầu và duy trì cơ nạc tối đa.</p>
+                            <a href="#products" class="goal-link">Xem Đốt Mỡ Fat Burner <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: MAIN PRODUCT CATALOG WITH FILTER TABS -->
+        <section class="section-container products-section" id="products">
+            <div class="container">
+                <div class="section-title-wrap text-center" data-aos="fade-up">
+                    <span class="sub-title"><i class="fa-solid fa-star text-primary"></i> SẢN PHẨM TUYỂN CHỌN</span>
+                    <h2 class="main-title">DANH MỤC SẢN PHẨM BÁN CHẠY NHẤT</h2>
+                    <p class="desc">Tất cả sản phẩm đều được kiểm định nguồn gốc xuất xứ, tem niêm phong và bảo quản nhiệt độ chuẩn</p>
+                </div>
+
+                <!-- Tab Filters -->
+                <div class="filter-tabs-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <button class="filter-tab-btn active" data-filter="all">Tất Cả Sản Phẩm</button>
+                    <button class="filter-tab-btn" data-filter="whey">Whey Protein</button>
+                    <button class="filter-tab-btn" data-filter="mass">Sữa Tăng Cân</button>
+                    <button class="filter-tab-btn" data-filter="pre">Pre & Creatine</button>
+                    <button class="filter-tab-btn" data-filter="recovery">Phục Hồi EAA</button>
+                    <button class="filter-tab-btn" data-filter="vitamin">Vitamin & Dầu Cá</button>
+                </div>
+
+                <!-- Catalog Grid -->
+                <div class="products-grid catalog-grid" id="catalogGrid">
+                    <!-- Item 1: Whey Gold Standard -->
+                    <article class="product-card" data-category="whey" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag best-seller">BÁN CHẠY</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=600&q=80" alt="Gold Standard 100% Whey">
+                            <button class="quick-view-btn" onclick="openQuickView('Gold Standard 100% Whey 5lbs', '1.750.000₫', '2.100.000₫', 'Biểu tượng whey protein toàn cầu của Optimum Nutrition với 24g Protein mỗi muỗng.', 'https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">OPTIMUM NUTRITION (ON)</span>
+                            <h3 class="product-title"><a href="#products">Gold Standard 100% Whey 5lbs (2.27kg)</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(1.250 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-mug-saucer"></i> Double Rich Chocolate</span>
+                                <span class="serving-pill">74 Servings</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">1.750.000₫</span>
+                                <span class="old-price">2.100.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Gold Standard 100% Whey 5lbs', 1750000, 'https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=600&q=80', 'Double Rich Chocolate')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Item 2: Mass Gainer -->
+                    <article class="product-card" data-category="mass" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag discount-tag">-18%</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="Super Mass Gainer Dymatize">
+                            <button class="quick-view-btn" onclick="openQuickView('Super Mass Gainer 12lbs', '1.750.000₫', '2.150.000₫', 'Công thức giàu năng lượng 1280 calo và 52g protein giúp người gầy tăng cân hiệu quả.', 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">DYMATIZE NUTRITION</span>
+                            <h3 class="product-title"><a href="#products">Super Mass Gainer 12lbs (5.4kg) Tăng Cân Nhanh</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </div>
+                                <span class="rating-count">(310 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-bowl-food"></i> Rich Chocolate</span>
+                                <span class="serving-pill">1280 Calories</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">1.750.000₫</span>
+                                <span class="old-price">2.150.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Super Mass Gainer 12lbs', 1750000, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80', 'Rich Chocolate')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Item 3: Creatine Monohydrate -->
+                    <article class="product-card" data-category="pre" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag hot-tag">BÙNG NỔ</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Creatine Monohydrate Rule 1">
+                            <button class="quick-view-btn" onclick="openQuickView('Rule 1 Creatine 150 Servings', '590.000₫', '750.000₫', 'Creatine Monohydrate 100% tinh khiết tăng sức mạnh cơ bắp, giữ nước tế bào cơ nở nang.', 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">RULE ONE PROTEINS</span>
+                            <h3 class="product-title"><a href="#products">Rule 1 Creatine Monohydrate 100% Pure 150 Servings</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(720 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-droplet"></i> Unflavored (Không mùi)</span>
+                                <span class="serving-pill">150 Lần dùng</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">590.000₫</span>
+                                <span class="old-price">750.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Rule 1 Creatine 150 Servings', 590000, 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80', 'Unflavored')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Item 4: Scivation Xtend BCAA -->
+                    <article class="product-card" data-category="recovery" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag discount-tag">-15%</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Scivation Xtend BCAA 90 Servings">
+                            <button class="quick-view-btn" onclick="openQuickView('Scivation Xtend BCAA Original 90 Servings', '1.190.000₫', '1.400.000₫', 'BCAA phục hồi cơ bắp hàng đầu thế giới với 7g BCAA theo tỷ lệ vàng 2:1:1 và điện giải.', 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">SCIVATION XTEND</span>
+                            <h3 class="product-title"><a href="#products">Scivation Xtend BCAA Original 90 Servings</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(915 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-apple-whole"></i> Blue Raspberry</span>
+                                <span class="serving-pill">90 Lần dùng</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">1.190.000₫</span>
+                                <span class="old-price">1.400.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Scivation Xtend BCAA Original 90 Servings', 1190000, 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80', 'Blue Raspberry')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Item 5: Clear Whey Hydrolyzed -->
+                    <article class="product-card" data-category="whey" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag hot-tag">PREMIUM</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=600&q=80" alt="Applied Nutrition Clear Whey">
+                            <button class="quick-view-btn" onclick="openQuickView('Applied Nutrition Clear Whey Hydrolyzed', '1.250.000₫', '1.450.000₫', 'Whey thủy phân trong suốt dạng nước trái cây mát lạnh, không béo, không đường, cực dễ uống.', 'https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">APPLIED NUTRITION UK</span>
+                            <h3 class="product-title"><a href="#products">Applied Nutrition Clear Whey Hydrolyzed 35 Servings</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(412 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-wine-glass"></i> Watermelon Ice</span>
+                                <span class="serving-pill">21g Protein</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">1.250.000₫</span>
+                                <span class="old-price">1.450.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Applied Nutrition Clear Whey Hydrolyzed 35 Servings', 1250000, 'https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=600&q=80', 'Watermelon Ice')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Item 6: Omega 3 Fish Oil -->
+                    <article class="product-card" data-category="vitamin" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag best-seller">SỨC KHỎE</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80" alt="Now Omega 3 Fish Oil">
+                            <button class="quick-view-btn" onclick="openQuickView('Now Omega-3 Fish Oil 200 Softgels', '480.000₫', '600.000₫', 'Dầu cá phân tử tinh khiết giàu EPA & DHA hỗ trợ tim mạch, bôi trơn khớp xương tập nặng.', 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">NOW FOODS USA</span>
+                            <h3 class="product-title"><a href="#products">Now Omega-3 Fish Oil Phân Tử Tinh Khiết 200 Softgels</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(530 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-capsules"></i> Viên nang mềm</span>
+                                <span class="serving-pill">200 Viên</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">480.000₫</span>
+                                <span class="old-price">600.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Now Omega-3 Fish Oil Phân Tử Tinh Khiết 200 Softgels', 480000, 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80', 'Softgels')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Item 7: Pre-Workout C4 -->
+                    <article class="product-card" data-category="pre" data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag discount-tag">-20%</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=600&q=80" alt="Cellucor C4 Original 60 Servings">
+                            <button class="quick-view-btn" onclick="openQuickView('Cellucor C4 Original Pre-Workout 60 Servings', '820.000₫', '1.020.000₫', 'Pre-workout kinh điển bán chạy nhất tại Mỹ, bơm năng lượng dồi dào, tập không biết mệt.', 'https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">CELLUCOR USA</span>
+                            <h3 class="product-title"><a href="#products">Cellucor C4 Original Pre-Workout 60 Servings</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(640 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-bolt"></i> Icy Blue Razz</span>
+                                <span class="serving-pill">60 Lần dùng</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">820.000₫</span>
+                                <span class="old-price">1.020.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('Cellucor C4 Original Pre-Workout 60 Servings', 820000, 'https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=600&q=80', 'Icy Blue Razz')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Item 8: Recovery EAA HydroBCAA -->
+                    <article class="product-card" data-category="recovery" data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-badge-wrap">
+                            <span class="badge-tag best-seller">EAA CHUẨN</span>
+                        </div>
+                        <button class="wishlist-toggle" title="Thêm vào yêu thích" onclick="toggleWishlist(this)" aria-label="Thêm vào yêu thích"><i class="fa-regular fa-heart"></i></button>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&q=80" alt="ProSupps HydroBCAA + EAA 90 Servings">
+                            <button class="quick-view-btn" onclick="openQuickView('ProSupps HydroBCAA + EAA Phục Hồi Toàn Diện', '990.000₫', '1.250.000₫', 'Cung cấp đủ 9 axit amin thiết yếu EAA giúp tổng hợp protein tối đa, bù khoáng thể thao.', 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&q=80')"><i class="fa-solid fa-eye"></i> Xem nhanh</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-brand">PROSUPPS USA</span>
+                            <h3 class="product-title"><a href="#products">ProSupps HydroBCAA + EAA Phục Hồi Toàn Diện 90 Servings</a></h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(380 đánh giá)</span>
+                            </div>
+                            <div class="product-meta">
+                                <span class="flavor-pill"><i class="fa-solid fa-cubes-stacked"></i> 7g BCAA + EAA</span>
+                                <span class="serving-pill">90 Lần dùng</span>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="current-price">990.000₫</span>
+                                <span class="old-price">1.250.000₫</span>
+                            </div>
+                            <button class="btn btn-add-cart" onclick="addToCart('ProSupps HydroBCAA + EAA Phục Hồi Toàn Diện 90 Servings', 990000, 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&q=80', 'Fruit Punch')">
+                                <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="catalog-cta-wrap text-center" data-aos="fade-up">
+                    <button class="btn btn-outline btn-lg" onclick="showToast('Thông báo', 'Đang cập nhật thêm 50+ sản phẩm mới từ nhà phân phối!')">
+                        <i class="fa-solid fa-spinner"></i> XEM THÊM 50+ SẢN PHẨM KHÁC
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: NUTRITION CALCULATOR / QUIZ BANNER -->
+        <section class="nutrition-calculator-section" id="nutrition-quiz">
+            <div class="container">
+                <div class="calc-wrapper" data-aos="fade-up">
+                    <div class="calc-info">
+                        <span class="sub-badge"><i class="fa-solid fa-dna"></i> TƯ VẤN THỂ TRẠNG TỰ ĐỘNG</span>
+                        <h2>TÍNH TOÁN LƯỢNG PROTEIN & COMBO CHUẨN</h2>
+                        <p>Nhập thông tin cơ thể của bạn để GymStore tính lượng Protein cần nạp mỗi ngày và gợi ý sản phẩm phù hợp nhất.</p>
+                        <ul class="calc-benefits">
+                            <li><i class="fa-solid fa-circle-check text-primary"></i> Tính theo chuẩn khoa học Quốc tế (ACSM)</li>
+                            <li><i class="fa-solid fa-circle-check text-primary"></i> Đề xuất lộ trình bổ sung theo tuần/tháng</li>
+                            <li><i class="fa-solid fa-circle-check text-primary"></i> Tiết kiệm chi phí, không lãng phí tiền mua sai loại</li>
+                        </ul>
+                    </div>
+                    <div class="calc-form-card">
+                        <h3>Công Cụ Ước Tính Nhanh</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="calcWeight">Cân nặng (kg)</label>
+                                <input type="number" id="calcWeight" placeholder="Ví dụ: 68" value="68">
+                            </div>
+                            <div class="form-group">
+                                <label for="calcHeight">Chiều cao (cm)</label>
+                                <input type="number" id="calcHeight" placeholder="Ví dụ: 172" value="172">
+                            </div>
+                            <div class="form-group">
+                                <label for="calcGoal">Mục tiêu hiện tại</label>
+                                <select id="calcGoal">
+                                    <option value="tang-co">Tăng cơ nạc (Siết cân)</option>
+                                    <option value="tang-can">Tăng cân tăng cơ (Người gầy)</option>
+                                    <option value="giam-mo">Giảm mỡ toàn thân</option>
+                                    <option value="suc-khoe">Duy trì thể lực & Sức khỏe</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="calcIntensity">Tần suất tập luyện</label>
+                                <select id="calcIntensity">
+                                    <option value="3">3 - 4 buổi / tuần</option>
+                                    <option value="5" selected>5 - 6 buổi / tuần (Chuyên cần)</option>
+                                    <option value="7">Vận động viên / Cường độ cao</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" onclick="calculateNutrition()">
+                            <i class="fa-solid fa-calculator"></i> Tính Toán & Xem Đề Xuất
+                        </button>
+                        <div class="calc-result" id="calcResult" style="display: none;">
+                            <div class="result-number">
+                                <span>Lượng Protein khuyến nghị:</span>
+                                <strong id="proteinNeed">136 - 150g / ngày</strong>
+                            </div>
+                            <p class="result-recommendation" id="recommendationText">Gợi ý: 2 muỗng <strong>Whey Isolate</strong> sau tập + Chế độ ăn 400g ức gà/bò.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: AUTHENTICITY / QUALITY COMMITMENT -->
+        <section class="authenticity-section" aria-label="Cam kết chính hãng">
+            <div class="container">
+                <div class="auth-box" data-aos="zoom-in-up">
+                    <div class="auth-content">
+                        <span class="sub-title"><i class="fa-solid fa-shield-virus text-primary"></i> BẢO VỆ NGƯỜI TIÊU DÙNG</span>
+                        <h2>CÁCH NHẬN BIẾT THỰC PHẨM BỔ SUNG CHÍNH HÃNG TẠI GYMSTORE</h2>
+                        <p>Sức khỏe và tính mạng của khách hàng là ưu tiên số một. Mọi sản phẩm tại hệ thống đều có tem chống hàng giả của Viện Khoa Học Hình Sự - Bộ Công An.</p>
+                        
+                        <div class="auth-steps">
+                            <div class="auth-step-item">
+                                <div class="step-num">01</div>
+                                <div class="step-desc">
+                                    <strong>Tem Cào SMS Chống Giả</strong>
+                                    <span>Cào mã số gửi tổng đài xác thực trực tiếp từ nhà phân phối độc quyền tại Việt Nam.</span>
+                                </div>
+                            </div>
+                            <div class="auth-step-item">
+                                <div class="step-num">02</div>
+                                <div class="step-desc">
+                                    <strong>Tem Phụ Tiếng Việt Đạt Chuẩn</strong>
+                                    <span>Đầy đủ thông tin giấy phép công bố số ATTP của Cục An Toàn Thực Phẩm - Bộ Y Tế.</span>
+                                </div>
+                            </div>
+                            <div class="auth-step-item">
+                                <div class="step-num">03</div>
+                                <div class="step-desc">
+                                    <strong>Hóa Đơn Điện Tử VAT Đỏ</strong>
+                                    <span>100% đơn hàng xuất hóa đơn VAT theo đúng tên sản phẩm và số lô sản xuất.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="auth-badge-seal">
+                        <div class="seal-inner">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>CAM KẾT</span>
+                            <strong>ĐỀN 10 LẦN</strong>
+                            <span>NẾU HÀNG GIẢ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: BRANDS WE CARRY -->
+        <section class="section-container brands-section" id="brands">
+            <div class="container">
+                <div class="section-title-wrap text-center" data-aos="fade-up">
+                    <span class="sub-title"><i class="fa-solid fa-handshake text-primary"></i> ĐỐI TÁC CHIẾN LƯỢC</span>
+                    <h2 class="main-title">THƯƠNG HIỆU HÀNG ĐẦU THẾ GIỚI</h2>
+                    <p class="desc">GymStore là đại lý ủy quyền chính thức của các tập đoàn dinh dưỡng thể hình uy tín</p>
+                </div>
+
+                <div class="brands-grid" data-aos="fade-up" data-aos-delay="100">
+                    <div class="brand-item">
+                        <span class="brand-name-tag">RULE ONE PROTEINS</span>
+                        <span class="brand-origin">USA 🇺🇸</span>
+                    </div>
+                    <div class="brand-item">
+                        <span class="brand-name-tag">OPTIMUM NUTRITION</span>
+                        <span class="brand-origin">USA 🇺🇸</span>
+                    </div>
+                    <div class="brand-item">
+                        <span class="brand-name-tag">DYMATIZE</span>
+                        <span class="brand-origin">USA 🇺🇸</span>
+                    </div>
+                    <div class="brand-item">
+                        <span class="brand-name-tag">APPLIED NUTRITION</span>
+                        <span class="brand-origin">UK 🇬🇧</span>
+                    </div>
+                    <div class="brand-item">
+                        <span class="brand-name-tag">MUTANT NUTRITION</span>
+                        <span class="brand-origin">CANADA 🇨🇦</span>
+                    </div>
+                    <div class="brand-item">
+                        <span class="brand-name-tag">CELLUCOR</span>
+                        <span class="brand-origin">USA 🇺🇸</span>
+                    </div>
+                    <div class="brand-item">
+                        <span class="brand-name-tag">SCIVATION XTEND</span>
+                        <span class="brand-origin">USA 🇺🇸</span>
+                    </div>
+                    <div class="brand-item">
+                        <span class="brand-name-tag">NOW FOODS</span>
+                        <span class="brand-origin">USA 🇺🇸</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: TESTIMONIALS & ATHLETES (SEMANTIC HTML5: ARTICLE) -->
+        <section class="section-container testimonials-section" aria-label="Đánh giá khách hàng">
+            <div class="container">
+                <div class="section-title-wrap text-center" data-aos="fade-up">
+                    <span class="sub-title"><i class="fa-solid fa-comments text-primary"></i> PHẢN HỒI THỰC TẾ</span>
+                    <h2 class="main-title">VẬN ĐỘNG VIÊN & KHÁCH HÀNG NÓI GÌ?</h2>
+                    <p class="desc">Hơn 150.000 khách hàng đã đồng hành và lột xác hình thể cùng GymStore</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <article class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stars text-primary">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote class="quote">"Mình mua Whey Rule 1 và Creatine ở GymStore đã hơn 3 năm. Tem cào kiểm tra SMS chuẩn chỉ, hàng date xa, vị dâu chocolate uống rất êm bụng. Giao hàng nội thành chỉ 1 tiếng là có!"</blockquote>
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Trần Tuấn Kiệt">
+                            </div>
+                            <div class="user-info">
+                                <strong>Trần Tuấn Kiệt</strong>
+                                <span>Huấn Luyện Viên Thể Hình (PT Hà Nội)</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stars text-primary">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote class="quote">"Từ 52kg gầy nhom, nhờ các bạn chuyên viên GymStore tư vấn dùng Mutant Mass kết hợp giáo án tập 4 buổi/tuần, sau 3 tháng mình đã lên được 61kg cơ bắp rõ nét. Quá uy tín!"</blockquote>
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Lê Hoàng Nam">
+                            </div>
+                            <div class="user-info">
+                                <strong>Lê Hoàng Nam</strong>
+                                <span>Kỹ sư Công nghệ thông tin (TP.HCM)</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stars text-primary">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote class="quote">"Clear Whey vị cam mát lạnh cứu cánh ngày hè tập nặng. Dịch vụ chăm sóc khách hàng ở đây rất nhiệt tình, giải đáp cặn kẽ từng loại amino acid chứ không hề chèo kéo."</blockquote>
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Phạm Mai Linh">
+                            </div>
+                            <div class="user-info">
+                                <strong>Phạm Mai Linh</strong>
+                                <span>CrossFit Athlete & Pilates Trainer</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: FITNESS KNOWLEDGE / BLOG (SEMANTIC HTML5: ARTICLE & TIME) -->
+        <section class="section-container blog-section" id="blog">
+            <div class="container">
+                <div class="section-title-wrap text-center" data-aos="fade-up">
+                    <span class="sub-title"><i class="fa-solid fa-book-open text-primary"></i> GÓC KIẾN THỨC</span>
+                    <h2 class="main-title">CẨM NANG DINH DƯỠNG & TẬP LUYỆN</h2>
+                    <p class="desc">Chia sẻ bí quyết tăng cơ, giảm mỡ khoa học được cố vấn bởi các bác sĩ dinh dưỡng thể thao</p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                        <figure class="blog-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80" alt="Thời điểm vàng uống Whey Protein">
+                            <span class="blog-category">Dinh Dưỡng</span>
+                        </figure>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> <time datetime="2026-10-18">18 Tháng 10, 2026</time></span>
+                                <span><i class="fa-regular fa-clock"></i> 5 phút đọc</span>
+                            </div>
+                            <h3 class="blog-title"><a href="#blog">Thời Điểm Vàng Uống Whey Protein Để Cơ Bắp Phát Triển Tối Đa</a></h3>
+                            <p class="blog-excerpt">Uống trước hay sau tập? Uống buổi sáng hay trước khi đi ngủ? Phân tích cơ chế đồng hóa protein theo nghiên cứu khoa học mới nhất.</p>
+                            <a href="#blog" class="read-more">Đọc tiếp <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                        <figure class="blog-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Creatine Monohydrate cách dùng đúng">
+                            <span class="blog-category">Thực Phẩm Bổ Sung</span>
+                        </figure>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> <time datetime="2026-10-15">15 Tháng 10, 2026</time></span>
+                                <span><i class="fa-regular fa-clock"></i> 6 phút đọc</span>
+                            </div>
+                            <h3 class="blog-title"><a href="#blog">Creatine Có Làm Rụng Tóc? Hướng Dẫn Nạp Creatine An Toàn & Chuẩn Chỉ</a></h3>
+                            <p class="blog-excerpt">Giải mã toàn bộ hiểu lầm về Creatine Monohydrate: Pha giai đoạn nạp (Loading Phase) hay uống đều 5g mỗi ngày có hiệu quả hơn?</p>
+                            <a href="#blog" class="read-more">Đọc tiếp <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                        <figure class="blog-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80" alt="So sánh Mass Gainer và Whey Protein">
+                            <span class="blog-category">Hướng Dẫn Chọn Mua</span>
+                        </figure>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> <time datetime="2026-10-12">12 Tháng 10, 2026</time></span>
+                                <span><i class="fa-regular fa-clock"></i> 4 phút đọc</span>
+                            </div>
+                            <h3 class="blog-title"><a href="#blog">Người Mới Tập Gym Nên Uống Sữa Mass Hay Whey Protein Trước?</a></h3>
+                            <p class="blog-excerpt">Đừng tốn tiền vô ích! Cùng phân tích mục tiêu thể trạng người gầy và người thừa mỡ để lựa chọn dòng sữa bổ sung chính xác nhất.</p>
+                            <a href="#blog" class="read-more">Đọc tiếp <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 11: VIP NEWSLETTER & PROMO BANNER -->
+        <section class="newsletter-section" aria-label="Đăng ký nhận tin">
+            <div class="container newsletter-box" data-aos="zoom-in">
+                <div class="newsletter-content">
+                    <span class="badge-tag hot">ƯU ĐÃI THÀNH VIÊN</span>
+                    <h2>ĐĂNG KÝ THÀNH VIÊN GYMSTORE VIP CLUB</h2>
+                    <p>Nhận ngay mã giảm giá <strong>100.000₫</strong> cho đơn hàng đầu tiên và lịch nhận quà sinh nhật cùng hàng trăm cẩm nang tập luyện độc quyền.</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); handleSubscribe();">
+                    <div class="input-group">
+                        <input type="email" id="subscriberEmail" placeholder="Nhập địa chỉ email của bạn..." required aria-label="Địa chỉ email đăng ký">
+                        <button type="submit" class="btn btn-primary">
+                            <span>NHẬN MÃ GIẢM GIÁ</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <span class="privacy-note"><i class="fa-solid fa-lock"></i> Chúng tôi cam kết bảo mật 100% thông tin cá nhân.</span>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SEMANTIC HTML5: FOOTER (CHÂN TRANG) -->
+    <footer class="main-footer" id="contact">
+        <div class="container footer-top">
+            <div class="footer-grid">
+                <!-- Col 1: Brand Info -->
+                <div class="footer-col brand-col">
+                    <a href="#home" class="logo footer-logo">
+                        <img src="assets/logo.png" alt="GymStore Logo" class="brand-logo-img">
+                        <div class="logo-text">
+                            <span class="brand-name">GYM<span>STORE</span></span>
+                            <span class="brand-tagline">SPORT NUTRITION • SINCE 2011</span>
+                        </div>
+                    </a>
+                    <p class="footer-about">
+                        GymStore là chuỗi bán lẻ thực phẩm thể hình chính hãng hàng đầu Việt Nam. Tự hào mang đến nguồn dinh dưỡng thể thao chuẩn quốc tế, nâng tầm vóc dáng và sức mạnh người Việt.
+                    </p>
+                    <address class="footer-contact-info">
+                        <p><i class="fa-solid fa-location-dot text-primary"></i> 398 Xã Đàn, Nam Đồng, Đống Đa, Hà Nội</p>
+                        <p><i class="fa-solid fa-location-dot text-primary"></i> 286 Cộng Hòa, P.13, Q.Tân Bình, TP. Hồ Chí Minh</p>
+                        <p><i class="fa-solid fa-phone text-primary"></i> Hotline/Zalo: <strong><a href="tel:0375199493">0375 199 493</a></strong></p>
+                        <p><i class="fa-solid fa-envelope text-primary"></i> Email: <strong><a href="mailto:cong214165@gmail.com">cong214165@gmail.com</a></strong></p>
+                    </address>
+                </div>
+
+                <!-- Col 2: Categories -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">DANH MỤC NỔI BẬT</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Whey Protein Tăng Cơ Nạc</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Sữa Tăng Cân Mass Gainer</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Pre-Workout Tăng Sức Mạnh</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Phục Hồi Chống Teo Cơ BCAA/EAA</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Đốt Mỡ Cắt Nét Giảm Cân</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Vitamin Khoáng Chất Thể Thao</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Phụ Kiện Bình Lắc & Dây Quấn Cổ Tay</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Customer Care & Policies -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">HỖ TRỢ KHÁCH HÀNG</h4>
+                    <ul class="footer-links">
+                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Hướng Dẫn Mua Hàng & Thanh Toán</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Chính Sách Giao Hàng Siêu Tốc 2H</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Chính Sách Đổi Trả & Hoàn Tiền</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Cam Kết Hàng Chính Hãng & Đền Bù</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Chính Sách Bảo Mật Thông Tin</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Hướng Dẫn Tích Điểm Đổi Quà VIP</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Câu Hỏi Thường Gặp (FAQ)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Certifications & Social -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">KẾT NỐI & CHỨNG NHẬN</h4>
+                    <p class="social-desc">Theo dõi GymStore để cập nhật livestream deal sốc và quà tặng mỗi ngày:</p>
+                    <div class="social-buttons">
+                        <a href="https://facebook.com" class="social-btn" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://youtube.com" class="social-btn" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://tiktok.com" class="social-btn" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://instagram.com" class="social-btn" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+
+                    <div class="certifications">
+                        <h5 class="sub-heading">CHỨNG NHẬN BỘ CÔNG THƯƠNG</h5>
+                        <div class="gov-badge">
+                            <i class="fa-solid fa-certificate text-primary"></i> Đã Đăng Ký & Thông Báo Bộ Công Thương
+                        </div>
+                    </div>
+
+                    <div class="payment-partners">
+                        <h5 class="sub-heading">PHƯƠNG THỨC THANH TOÁN</h5>
+                        <div class="payment-icons">
+                            <span class="pay-tag"><i class="fa-brands fa-cc-visa"></i> VISA</span>
+                            <span class="pay-tag"><i class="fa-brands fa-cc-mastercard"></i> Master</span>
+                            <span class="pay-tag"><i class="fa-solid fa-qrcode"></i> VNPAY-QR</span>
+                            <span class="pay-tag"><i class="fa-solid fa-money-bill-wave"></i> COD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>© 2026 GymStore Supplements. Sinh viên thực hiện: <strong>Nguyễn Thành Công (MSSV: 125000360)</strong> | SĐT: <strong>0375 199 493</strong> | Email: <strong>cong214165@gmail.com</strong></p>
+                <div class="bottom-links">
+                    <a href="#home">Điều khoản sử dụng</a>
+                    <span>•</span>
+                    <a href="#home">Quyền riêng tư</a>
+                    <span>•</span>
+                    <a href="#home">Sơ đồ trang</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: CHECKOUT & ORDER MODAL (ĐẶT HÀNG & NHẬP THÔNG TIN) -->
+    <div class="modal-overlay" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+        <div class="modal-container checkout-container">
+            <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Đóng cửa sổ đặt hàng"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-grid">
+                <!-- Col 1: Cart Items Summary -->
+                <div class="checkout-cart-col">
+                    <div class="checkout-col-header">
+                        <h2 id="checkoutModalTitle"><i class="fa-solid fa-bag-shopping text-primary"></i> GIỎ HÀNG CỦA BẠN</h2>
+                        <span class="item-count-badge" id="checkoutBadgeCount">2 món</span>
+                    </div>
+
+                    <div class="cart-items-list" id="cartItemsList">
+                        <!-- Dynamic Cart Items Rendered By JS -->
+                    </div>
+
+                    <div class="cart-discount-box">
+                        <div class="input-group">
+                            <input type="text" id="voucherCodeInput" placeholder="Nhập mã giảm giá: GYM100">
+                            <button type="button" class="btn btn-outline" onclick="applyVoucher()">Áp dụng</button>
+                        </div>
+                        <span class="voucher-msg" id="voucherMsg"></span>
+                    </div>
+
+                    <div class="order-summary-totals">
+                        <div class="summary-row">
+                            <span>Tạm tính giỏ hàng:</span>
+                            <strong id="summarySubtotal">2.450.000₫</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span class="text-free-ship"><i class="fa-solid fa-truck-fast"></i> Miễn phí giao toàn quốc</span>
+                        </div>
+                        <div class="summary-row" id="discountRow" style="display: none;">
+                            <span>Mã giảm giá (Voucher):</span>
+                            <span class="text-discount" id="summaryDiscount">-100.000₫</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>TỔNG TIỀN THANH TOÁN:</span>
+                            <strong class="total-amount" id="summaryTotal">2.450.000₫</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Customer Shipping & Order Form -->
+                <div class="checkout-form-col">
+                    <div class="checkout-col-header">
+                        <h3><i class="fa-solid fa-truck text-primary"></i> THÔNG TIN NHẬN HÀNG</h3>
+                        <span class="sub-guide">Vui lòng điền địa chỉ để nhận hàng nhanh nhất</span>
+                    </div>
+
+                    <form id="orderForm" onsubmit="event.preventDefault(); submitOrder();">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="orderName">Họ và tên người nhận <span class="required">*</span></label>
+                                <input type="text" id="orderName" placeholder="Ví dụ: Nguyễn Thành Công" value="Nguyễn Thành Công" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderPhone">Số điện thoại nhận hàng <span class="required">*</span></label>
+                                <input type="tel" id="orderPhone" placeholder="Ví dụ: 0375199493" value="0375199493" pattern="[0-9]{10,11}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orderEmail">Email nhận xác nhận đơn hàng & hóa đơn</label>
+                            <input type="email" id="orderEmail" placeholder="Ví dụ: cong214165@gmail.com" value="cong214165@gmail.com">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="orderCity">Tỉnh / Thành phố <span class="required">*</span></label>
+                                <select id="orderCity" required>
+                                    <option value="TP. Hồ Chí Minh" selected>TP. Hồ Chí Minh (Giao siêu tốc 2h)</option>
+                                    <option value="Hà Nội">Hà Nội (Giao siêu tốc 2h)</option>
+                                    <option value="Đà Nẵng">Đà Nẵng</option>
+                                    <option value="Hải Phòng">Hải Phòng</option>
+                                    <option value="Cần Thơ">Cần Thơ</option>
+                                    <option value="Bình Dương">Bình Dương</option>
+                                    <option value="Tỉnh thành khác">Tỉnh thành khác (Giao 24h)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderDistrict">Quận / Huyện <span class="required">*</span></label>
+                                <input type="text" id="orderDistrict" placeholder="Ví dụ: Quận Tân Bình" value="Quận Tân Bình" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orderAddress">Địa chỉ số nhà, tên đường, phường/xã <span class="required">*</span></label>
+                            <input type="text" id="orderAddress" placeholder="Ví dụ: 286 Cộng Hòa, Phường 13" value="286 Cộng Hòa, Phường 13" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orderNote">Ghi chú giao hàng (tuỳ chọn)</label>
+                            <input type="text" id="orderNote" placeholder="Ví dụ: Giao giờ hành chính, gọi trước 15 phút...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phương thức thanh toán <span class="required">*</span></label>
+                            <div class="payment-options">
+                                <label class="payment-radio-label active">
+                                    <input type="radio" name="paymentMethod" value="COD" checked>
+                                    <div class="payment-radio-content">
+                                        <i class="fa-solid fa-money-bill-wave text-primary"></i>
+                                        <div>
+                                            <strong>Thanh toán khi nhận hàng (COD)</strong>
+                                            <span>Kiểm tra hàng chính hãng trước khi thanh toán, an tâm 100%</span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-radio-label">
+                                    <input type="radio" name="paymentMethod" value="BANK">
+                                    <div class="payment-radio-content">
+                                        <i class="fa-solid fa-qrcode text-primary"></i>
+                                        <div>
+                                            <strong>Chuyển khoản VietQR / MoMo / VNPAY</strong>
+                                            <span>Quét mã QR tự động xác nhận sau 10 giây</span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg btn-confirm-order">
+                            <i class="fa-solid fa-shield-check"></i> XÁC NHẬN ĐẶT HÀNG NGAY
+                        </button>
+                        <p class="order-secure-note">
+                            <i class="fa-solid fa-lock"></i> Đơn hàng được bảo vệ bởi GymStore SafeCheck • Đổi trả 7 ngày
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: ORDER CONFIRMATION SUCCESS (HÓA ĐƠN XÁC NHẬN ĐẶT HÀNG THÀNH CÔNG) -->
+    <div class="modal-overlay" id="orderSuccessModal" role="dialog" aria-modal="true" aria-labelledby="successOrderTitle">
+        <div class="modal-container success-container">
+            <button class="modal-close-btn" onclick="closeOrderSuccessModal()" aria-label="Đóng thông báo"><i class="fa-solid fa-xmark"></i></button>
+            <div class="order-success-content text-center">
+                <div class="success-icon animate__animated animate__zoomIn">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <span class="badge-tag hot">ĐẶT HÀNG THÀNH CÔNG</span>
+                <h2 id="successOrderTitle">CẢM ƠN BẠN ĐÃ MUA HÀNG TẠI GYMSTORE!</h2>
+                <p class="success-subtitle">Đơn hàng của bạn đã được ghi nhận vào hệ thống và đang được xử lý chuyển phát siêu tốc.</p>
+
+                <div class="receipt-card">
+                    <div class="receipt-header">
+                        <div>
+                            <span class="label">Mã đơn hàng:</span>
+                            <strong class="order-code" id="receiptOrderCode">#GS-89241</strong>
+                        </div>
+                        <div>
+                            <span class="label">Thời gian đặt:</span>
+                            <span id="receiptOrderTime">20/10/2026 14:15</span>
+                        </div>
+                    </div>
+
+                    <div class="receipt-body">
+                        <div class="receipt-row">
+                            <span>Khách hàng nhận:</span>
+                            <strong id="receiptCustomerName">Nguyễn Thành Công</strong>
+                        </div>
+                        <div class="receipt-row">
+                            <span>Số điện thoại:</span>
+                            <strong id="receiptCustomerPhone">0375 199 493</strong>
+                        </div>
+                        <div class="receipt-row">
+                            <span>Địa chỉ giao:</span>
+                            <span id="receiptCustomerAddress">286 Cộng Hòa, P.13, Q.Tân Bình, TP.HCM</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span>Phương thức thanh toán:</span>
+                            <strong id="receiptPaymentMethod">Thanh toán khi nhận hàng (COD)</strong>
+                        </div>
+                        <div class="receipt-divider"></div>
+                        <div class="receipt-items-list" id="receiptItemsList">
+                            <!-- Items rendered by JS -->
+                        </div>
+                        <div class="receipt-divider"></div>
+                        <div class="receipt-row receipt-total">
+                            <span>TỔNG TIỀN CẦN THANH TOÁN:</span>
+                            <strong class="total-price" id="receiptTotalAmount">2.450.000₫</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="receipt-actions">
+                    <button type="button" class="btn btn-outline" onclick="window.print()">
+                        <i class="fa-solid fa-print"></i> In Hóa Đơn
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="closeOrderSuccessModal()">
+                        <i class="fa-solid fa-arrow-left"></i> Tiếp Tục Mua Sắm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: QUICK VIEW MODAL (SEMANTIC POPUP) -->
+    <div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Đóng cửa sổ xem nhanh"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-grid">
+                <div class="modal-image-col">
+                    <img id="modalProductImg" src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80" alt="Product Quick View">
+                    <div class="modal-badges">
+                        <span class="badge-tag hot">Chính Hãng 100%</span>
+                        <span class="badge-tag discount-tag">Free Ship</span>
+                    </div>
+                </div>
+                <div class="modal-details-col">
+                    <span class="modal-category">SUPPLEMENTS & PROTEIN</span>
+                    <h2 class="modal-title" id="modalProductTitle">Rule 1 Proteins 5lbs</h2>
+                    <div class="product-rating">
+                        <div class="stars text-primary">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="rating-count">(98% khách hàng hài lòng)</span>
+                    </div>
+                    <div class="modal-price-box">
+                        <span class="current-price" id="modalProductPrice">1.650.000₫</span>
+                        <span class="old-price" id="modalProductOldPrice">2.200.000₫</span>
+                    </div>
+                    <p class="modal-desc" id="modalProductDesc">
+                        Mô tả ngắn sản phẩm chính hãng với tiêu chuẩn chất lượng cao nhất...
+                    </p>
+                    <div class="modal-flavor-select">
+                        <label>Chọn hương vị yêu thích:</label>
+                        <div class="flavor-options" id="modalFlavorOptions">
+                            <button class="flavor-btn active" type="button">Socola Fudge</button>
+                            <button class="flavor-btn" type="button">Vani Béo Ngậy</button>
+                            <button class="flavor-btn" type="button">Dâu Tây Tự Nhiên</button>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <div class="qty-selector">
+                            <button type="button" onclick="changeModalQty(-1)" aria-label="Giảm số lượng"><i class="fa-solid fa-minus"></i></button>
+                            <input type="number" id="modalQtyInput" value="1" min="1" max="99" readonly aria-label="Số lượng sản phẩm">
+                            <button type="button" onclick="changeModalQty(1)" aria-label="Tăng số lượng"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <button type="button" class="btn btn-outline" id="modalAddCartBtn">
+                            <i class="fa-solid fa-cart-plus"></i> Thêm Vào Giỏ
+                        </button>
+                        <button type="button" class="btn btn-primary" id="modalBuyNowBtn">
+                            <i class="fa-solid fa-bolt"></i> Mua Ngay
+                        </button>
+                    </div>
+                    <div class="modal-guarantees">
+                        <div><i class="fa-solid fa-shield-check text-primary"></i> Đổi trả miễn phí 7 ngày</div>
+                        <div><i class="fa-solid fa-truck-fast text-primary"></i> Giao nhanh trong 2h tại TP.HCM & HN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-notification" id="toastNotification" role="alert" aria-live="assertive">
+        <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="toast-message">
+            <strong id="toastTitle">Thành công!</strong>
+            <span id="toastDesc">Đã thêm sản phẩm vào giỏ hàng.</span>
+        </div>
+    </div>
+
+    <!-- FLOATING ACTIONS: CHAT ZALO & SCROLL TO TOP -->
+    <div class="floating-tools">
+        <a href="https://zalo.me/0375199493" target="_blank" class="float-btn zalo-btn" title="Chat Zalo: 0375199493" aria-label="Chat Zalo">
+            <i class="fa-solid fa-comment-dots"></i>
+            <span class="float-tooltip">Zalo 0375199493</span>
+        </a>
+        <button class="float-btn scroll-top-btn" id="scrollTopBtn" title="Lên đầu trang" onclick="scrollToTop()" aria-label="Lên đầu trang">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- AOS (Animate On Scroll) JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- MAIN JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 80
+        });
+
+        // 2. Dark / Light Theme Toggle & LocalStorage
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = themeToggleBtn.querySelector('.theme-icon');
+        const themeText = themeToggleBtn.querySelector('.theme-text');
+
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('gymstore_theme', themeName);
+            if (themeName === 'light') {
+                themeIcon.className = 'fa-solid fa-sun theme-icon';
+                themeText.textContent = 'Sáng';
+            } else {
+                themeIcon.className = 'fa-solid fa-moon theme-icon';
+                themeText.textContent = 'Tối';
+            }
+        }
+
+        const savedTheme = localStorage.getItem('gymstore_theme') || 'dark';
+        setTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+            showToast('Chế độ hiển thị', newTheme === 'light' ? 'Đã bật Giao diện Sáng ☀️' : 'Đã bật Giao diện Tối 🌙');
+        });
+
+        // 3. CART & ORDER STATE MANAGEMENT
+        let cartData = [
+            {
+                id: 1,
+                name: 'Rule 1 Protein WPI + WPH 5lbs',
+                flavor: 'Chocolate Fudge',
+                price: 1650000,
+                qty: 1,
+                img: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 2,
+                name: 'Cellucor C4 Original Pre-Workout 60 Servings',
+                flavor: 'Icy Blue Razz',
+                price: 800000,
+                qty: 1,
+                img: 'https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        let wishlistCount = 3;
+        let appliedDiscount = 0; // Discount in VND
+
+        function updateCartUI() {
+            const totalItems = cartData.reduce((sum, item) => sum + item.qty, 0);
+            const subtotal = cartData.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const finalTotal = Math.max(0, subtotal - appliedDiscount);
+
+            // Update Header Cart
+            document.getElementById('cartCount').textContent = totalItems;
+            document.getElementById('cartTotalHeader').textContent = finalTotal.toLocaleString('vi-VN') + '₫';
+
+            // Update Checkout Modal Totals
+            const checkoutBadge = document.getElementById('checkoutBadgeCount');
+            if (checkoutBadge) checkoutBadge.textContent = totalItems + ' sản phẩm';
+            
+            const subtotalEl = document.getElementById('summarySubtotal');
+            if (subtotalEl) subtotalEl.textContent = subtotal.toLocaleString('vi-VN') + '₫';
+
+            const totalEl = document.getElementById('summaryTotal');
+            if (totalEl) totalEl.textContent = finalTotal.toLocaleString('vi-VN') + '₫';
+
+            // Render Items in Checkout Cart
+            renderCheckoutCartItems();
+        }
+
+        function renderCheckoutCartItems() {
+            const listEl = document.getElementById('cartItemsList');
+            if (!listEl) return;
+
+            if (cartData.length === 0) {
+                listEl.innerHTML = `
+                    <div class="empty-cart-msg">
+                        <i class="fa-solid fa-basket-shopping text-primary"></i>
+                        <p>Giỏ hàng của bạn đang trống!</p>
+                        <a href="#products" onclick="closeCheckoutModal()" class="btn btn-outline btn-sm">Xem sản phẩm ngay</a>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            cartData.forEach((item, index) => {
+                html += `
+                    <div class="cart-item-row">
+                        <img src="${item.img}" alt="${item.name}" class="cart-item-thumb">
+                        <div class="cart-item-info">
+                            <h4 class="cart-item-title">${item.name}</h4>
+                            <span class="cart-item-flavor"><i class="fa-solid fa-tag"></i> Vị: ${item.flavor}</span>
+                            <div class="cart-item-price-unit">${item.price.toLocaleString('vi-VN')}₫</div>
+                        </div>
+                        <div class="cart-item-controls">
+                            <div class="qty-mini-selector">
+                                <button type="button" onclick="changeCartQty(${index}, -1)" aria-label="Giảm"><i class="fa-solid fa-minus"></i></button>
+                                <span>${item.qty}</span>
+                                <button type="button" onclick="changeCartQty(${index}, 1)" aria-label="Tăng"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                            <span class="cart-item-subtotal">${(item.price * item.qty).toLocaleString('vi-VN')}₫</span>
+                            <button type="button" class="btn-remove-item" onclick="removeCartItem(${index})" title="Xoá"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+            listEl.innerHTML = html;
+        }
+
+        function changeCartQty(index, delta) {
+            if (cartData[index]) {
+                cartData[index].qty += delta;
+                if (cartData[index].qty <= 0) {
+                    cartData.splice(index, 1);
+                }
+                updateCartUI();
+            }
+        }
+
+        function removeCartItem(index) {
+            if (cartData[index]) {
+                const removedName = cartData[index].name;
+                cartData.splice(index, 1);
+                updateCartUI();
+                showToast('Đã xoá', `Đã bỏ ${removedName} khỏi giỏ.`);
+            }
+        }
+
+        function addToCart(productName, price, imgUrl, flavorName = 'Mặc định') {
+            const existing = cartData.find(item => item.name === productName && item.flavor === flavorName);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cartData.push({
+                    id: Date.now(),
+                    name: productName,
+                    flavor: flavorName,
+                    price: price,
+                    qty: 1,
+                    img: imgUrl || 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80'
+                });
+            }
+            updateCartUI();
+            showToast('Đã thêm vào giỏ hàng!', `${productName} (${flavorName}) - ${price.toLocaleString('vi-VN')}₫`);
+        }
+
+        // Voucher Coupon Application
+        function applyVoucher() {
+            const input = document.getElementById('voucherCodeInput');
+            const msg = document.getElementById('voucherMsg');
+            const discountRow = document.getElementById('discountRow');
+            const summaryDiscount = document.getElementById('summaryDiscount');
+
+            if (!input || !msg) return;
+            const code = input.value.trim().toUpperCase();
+
+            if (code === 'GYM100' || code === 'VIP100' || code === 'CONG100') {
+                appliedDiscount = 100000;
+                msg.textContent = '🎉 Áp dụng thành công voucher giảm 100.000₫!';
+                msg.className = 'voucher-msg success';
+                discountRow.style.display = 'flex';
+                summaryDiscount.textContent = '-100.000₫';
+                updateCartUI();
+                showToast('Mã giảm giá', 'Bạn được giảm 100.000₫ cho đơn hàng này!');
+            } else if (code === '') {
+                msg.textContent = 'Vui lòng nhập mã giảm giá (ví dụ: GYM100)';
+                msg.className = 'voucher-msg error';
+            } else {
+                msg.textContent = 'Mã không tồn tại hoặc đã hết hạn! Thử mã GYM100';
+                msg.className = 'voucher-msg error';
+            }
+        }
+
+        // 4. CHECKOUT MODAL OPEN/CLOSE
+        const checkoutModal = document.getElementById('checkoutModal');
+        const cartToggle = document.getElementById('cartToggle');
+
+        function openCheckoutModal() {
+            updateCartUI();
+            checkoutModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCheckoutModal() {
+            checkoutModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        if (cartToggle) {
+            cartToggle.addEventListener('click', openCheckoutModal);
+        }
+
+        checkoutModal.addEventListener('click', (e) => {
+            if (e.target === checkoutModal) {
+                closeCheckoutModal();
+            }
+        });
+
+        // Payment Radio Style Trigger
+        document.querySelectorAll('.payment-radio-label input').forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.querySelectorAll('.payment-radio-label').forEach(lbl => lbl.classList.remove('active'));
+                radio.closest('.payment-radio-label').classList.add('active');
+            });
+        });
+
+        // 5. SUBMIT ORDER & CONFIRMATION RECEIPT
+        const orderSuccessModal = document.getElementById('orderSuccessModal');
+
+        function submitOrder() {
+            if (cartData.length === 0) {
+                alert('Giỏ hàng của bạn đang trống! Vui lòng chọn ít nhất 1 sản phẩm để đặt hàng.');
+                return;
+            }
+
+            const name = document.getElementById('orderName').value.trim();
+            const phone = document.getElementById('orderPhone').value.trim();
+            const city = document.getElementById('orderCity').value;
+            const district = document.getElementById('orderDistrict').value.trim();
+            const address = document.getElementById('orderAddress').value.trim();
+            const paymentInput = document.querySelector('input[name="paymentMethod"]:checked');
+            const paymentMethod = paymentInput ? (paymentInput.value === 'COD' ? 'Thanh toán tiền mặt khi nhận hàng (COD)' : 'Chuyển khoản VietQR / MoMo / VNPAY') : 'COD';
+
+            // Generate Random Order Code
+            const randomCode = '#GS-' + Math.floor(10000 + Math.random() * 90000);
+            const now = new Date();
+            const formattedTime = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+
+            // Calculate Totals
+            const subtotal = cartData.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const finalTotal = Math.max(0, subtotal - appliedDiscount);
+
+            // Populate Receipt
+            document.getElementById('receiptOrderCode').textContent = randomCode;
+            document.getElementById('receiptOrderTime').textContent = formattedTime;
+            document.getElementById('receiptCustomerName').textContent = name;
+            document.getElementById('receiptCustomerPhone').textContent = phone;
+            document.getElementById('receiptCustomerAddress').textContent = `${address}, ${district}, ${city}`;
+            document.getElementById('receiptPaymentMethod').textContent = paymentMethod;
+            document.getElementById('receiptTotalAmount').textContent = finalTotal.toLocaleString('vi-VN') + '₫';
+
+            // Populate Items in Receipt
+            let receiptItemsHtml = '';
+            cartData.forEach(item => {
+                receiptItemsHtml += `
+                    <div class="receipt-item-row">
+                        <span class="item-name">${item.qty}x ${item.name} (${item.flavor})</span>
+                        <span class="item-price">${(item.price * item.qty).toLocaleString('vi-VN')}₫</span>
+                    </div>
+                `;
+            });
+            document.getElementById('receiptItemsList').innerHTML = receiptItemsHtml;
+
+            // Close checkout modal & open success receipt
+            closeCheckoutModal();
+            orderSuccessModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            // Reset cart
+            cartData = [];
+            appliedDiscount = 0;
+            updateCartUI();
+            showToast('Đặt hàng thành công!', `Mã đơn hàng ${randomCode} đang được xử lý.`);
+        }
+
+        function closeOrderSuccessModal() {
+            orderSuccessModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        orderSuccessModal.addEventListener('click', (e) => {
+            if (e.target === orderSuccessModal) {
+                closeOrderSuccessModal();
+            }
+        });
+
+        // 6. Sticky Header Effect & Scroll Top
+        const header = document.getElementById('header');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+                scrollTopBtn.classList.add('show');
+            } else {
+                header.classList.remove('scrolled');
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 7. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('mobile-open');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mainNav.classList.contains('mobile-open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 8. Countdown Timer for Flash Sale
+        let totalSeconds = (8 * 3600) + (45 * 60) + 30; // 08:45:30
+        const saleHours = document.getElementById('saleHours');
+        const saleMinutes = document.getElementById('saleMinutes');
+        const saleSeconds = document.getElementById('saleSeconds');
+
+        function updateCountdown() {
+            if (totalSeconds <= 0) {
+                totalSeconds = 24 * 3600;
+            }
+            totalSeconds--;
+
+            const h = Math.floor(totalSeconds / 3600);
+            const m = Math.floor((totalSeconds % 3600) / 60);
+            const s = Math.floor(totalSeconds % 60);
+
+            if (saleHours) saleHours.textContent = h.toString().padStart(2, '0');
+            if (saleMinutes) saleMinutes.textContent = m.toString().padStart(2, '0');
+            if (saleSeconds) saleSeconds.textContent = s.toString().padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+
+        // 9. Product Catalog Filter Tabs with AOS Refresh
+        const filterBtns = document.querySelectorAll('.filter-tab-btn');
+        const productCards = document.querySelectorAll('.catalog-grid .product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                productCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                AOS.refresh();
+            });
+        });
+
+        // 10. Wishlist Toggle
+        function toggleWishlist(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                icon.style.color = '#ef4444';
+                wishlistCount++;
+                showToast('Yêu thích', 'Đã thêm sản phẩm vào danh sách yêu thích!');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                icon.style.color = '';
+                wishlistCount = Math.max(0, wishlistCount - 1);
+                showToast('Thông báo', 'Đã bỏ khỏi danh sách yêu thích.');
+            }
+            document.getElementById('wishlistCount').textContent = wishlistCount;
+        }
+
+        // 11. Toast Notification System
+        let toastTimeout;
+        function showToast(title, desc) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastDesc').textContent = desc;
+
+            toast.classList.add('active');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3500);
+        }
+
+        // 12. Quick View Modal
+        const quickViewModal = document.getElementById('quickViewModal');
+        let currentModalProduct = { name: '', price: 0, img: '', flavor: 'Socola Fudge' };
+
+        function openQuickView(title, priceStr, oldPriceStr, desc, imgUrl) {
+            document.getElementById('modalProductTitle').textContent = title;
+            document.getElementById('modalProductPrice').textContent = priceStr;
+            document.getElementById('modalProductOldPrice').textContent = oldPriceStr;
+            document.getElementById('modalProductDesc').textContent = desc;
+            document.getElementById('modalQtyInput').value = 1;
+
+            const modalImg = document.getElementById('modalProductImg');
+            if (imgUrl) modalImg.src = imgUrl;
+
+            const numericPrice = parseInt(priceStr.replace(/[^0-9]/g, '')) || 1500000;
+            currentModalProduct = {
+                name: title,
+                price: numericPrice,
+                img: imgUrl || 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80',
+                flavor: 'Socola Fudge'
+            };
+
+            // Setup buttons
+            document.getElementById('modalAddCartBtn').onclick = function() {
+                const qty = parseInt(document.getElementById('modalQtyInput').value) || 1;
+                for (let i = 0; i < qty; i++) {
+                    addToCart(currentModalProduct.name, currentModalProduct.price, currentModalProduct.img, currentModalProduct.flavor);
+                }
+                closeQuickView();
+            };
+
+            document.getElementById('modalBuyNowBtn').onclick = function() {
+                const qty = parseInt(document.getElementById('modalQtyInput').value) || 1;
+                for (let i = 0; i < qty; i++) {
+                    addToCart(currentModalProduct.name, currentModalProduct.price, currentModalProduct.img, currentModalProduct.flavor);
+                }
+                closeQuickView();
+                openCheckoutModal();
+            };
+
+            quickViewModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQuickView() {
+            quickViewModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        quickViewModal.addEventListener('click', (e) => {
+            if (e.target === quickViewModal) {
+                closeQuickView();
+            }
+        });
+
+        function changeModalQty(delta) {
+            const input = document.getElementById('modalQtyInput');
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            if (val > 99) val = 99;
+            input.value = val;
+        }
+
+        // Flavor picker inside Quick View Modal
+        document.querySelectorAll('#modalFlavorOptions .flavor-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('#modalFlavorOptions .flavor-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentModalProduct.flavor = this.textContent.trim();
+            });
+        });
+
+        // 13. Nutrition Calculator
+        function calculateNutrition() {
+            const weight = parseFloat(document.getElementById('calcWeight').value) || 70;
+            const goal = document.getElementById('calcGoal').value;
+            const resultBox = document.getElementById('calcResult');
+            const proteinNeed = document.getElementById('proteinNeed');
+            const recommendationText = document.getElementById('recommendationText');
+
+            let minRatio = 1.6;
+            let maxRatio = 2.2;
+            let advice = '';
+
+            if (goal === 'tang-co') {
+                minRatio = 2.0;
+                maxRatio = 2.4;
+                advice = 'Gợi ý: 2 lần uống Whey Isolate (Sáng sớm & ngay sau tập) + Creatine 5g tăng sức mạnh.';
+            } else if (goal === 'tang-can') {
+                minRatio = 1.6;
+                maxRatio = 2.0;
+                advice = 'Gợi ý: Dùng Mass Gainer (2-3 lần/ngày xen kẽ các bữa phụ) bổ sung thêm 1000+ Calories.';
+            } else if (goal === 'giam-mo') {
+                minRatio = 2.2;
+                maxRatio = 2.5;
+                advice = 'Gợi ý: Dùng Whey Isolate/Hydrolyzed không đường + Fat Burner đốt mỡ + BCAA bảo tồn cơ.';
+            } else {
+                minRatio = 1.4;
+                maxRatio = 1.8;
+                advice = 'Gợi ý: 1 muỗng Whey hàng ngày + Dầu cá Omega-3 và Vitamin tổng hợp tăng đề kháng.';
+            }
+
+            const minProtein = Math.round(weight * minRatio);
+            const maxProtein = Math.round(weight * maxRatio);
+
+            proteinNeed.textContent = `${minProtein}g - ${maxProtein}g Protein / ngày`;
+            recommendationText.innerHTML = advice;
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // 14. Newsletter Subscription
+        function handleSubscribe() {
+            const email = document.getElementById('subscriberEmail').value;
+            if (email) {
+                showToast('Đăng ký VIP thành công! 🎉', 'Mã giảm giá 100K đã gửi vào hộp thư: ' + email);
+                document.getElementById('subscriberEmail').value = '';
+            }
+        }
+
+        // Initial UI Render
+        updateCartUI();
+    </script>
+</body>
+</html>
